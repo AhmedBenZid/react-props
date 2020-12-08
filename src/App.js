@@ -1,21 +1,13 @@
-import Profile from './Component/Profile';
-import './App.css';
-import NavBar from './Component/NavBar';
-const profile = {
-  image: "./res/IMG_20190401_204533_448.jpg",
-  name: "Ahmed",
-  lastName: "Ben Zid",
-  Adresse: {
-    city: "Tunis",
-    cp: "1001"
-  }
-};
+import Profile from './profile/Profile';
+import { Card } from 'react-bootstrap';
 
 function App() {
+  const handleName = (name = "User Name") => alert(name);
   return (
-    <div>
-      <NavBar obj={profile} />
-      <Profile />
+    <div className="App">
+      <Profile name="Ahmed Ben Zid" bio="I'm a Full-Stack JS student in Go My Code" profession="Student" handleName={handleName}>
+        <Card.Img variant="top" src="./ahmedbz.jpg" alt="profile pic" style={{ height: 300, width: '26rem' }} />
+      </Profile>
     </div>
   );
 }
